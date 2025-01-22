@@ -45,14 +45,20 @@
 
   .container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
     border: 0.1rem solid var(--primary-light);
     height: 30rem;
     width: 30rem;
     margin: 2rem;
     background-color: var(--secondary-light);
     box-shadow: var(--primary-light) 0px 3px 8px;
+  }
+
+  .gridBox {
+    height: 6.25%;
+    width: 6.25%;
   }
 
   /* MEDIA QUERIES */
