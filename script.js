@@ -1,7 +1,8 @@
 const container = document.querySelector(".container");
 
-function createGrid(axis) {
-    let gridSize = axis * axis
+// Function to create the grid
+function createGrid(size) {
+    let gridSize = size * size
     for (let i = 0; i < gridSize; i++) {
         const gridBox = document.createElement("div");
         gridBox.classList.add("gridBox");
