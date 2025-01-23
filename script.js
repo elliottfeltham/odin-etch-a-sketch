@@ -1,5 +1,9 @@
 const container = document.querySelector(".container");
 const gridSizeButton = document.querySelector("#grid-size")
+const rainbowModeButton = document.querySelector("#rainbow-mode")
+
+let isRainbowMode = false;
+
 
 // Function to prompt the user for a grid size
 function getGridSize() {
@@ -14,6 +18,16 @@ function getGridSize() {
     } while (gridSize < 1 || gridSize > 100 || isNaN(gridSize));
 
     return gridSize
+}
+
+// Function to get a rainbow color
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }
 
 // Function to create the grid
@@ -52,7 +66,11 @@ function paint () {
     allGridBoxes.forEach((gridBox) => {
         gridBox.addEventListener("mouseover", function () {
             if (isMouseDown == true) {
-            gridBox.style.backgroundColor = "black";
+                if (isRainbowMode == true) {
+                    gridBox.style.backgroundColor = getRandomColor();
+                } else {
+                    gridBox.style.backgroundColor = "black";
+                }
         }});
     });
 }
@@ -64,12 +82,18 @@ function resetGrid() {
     allGridBoxes.forEach((gridBox) => {
             gridBox.style.backgroundColor = "white";
 })};
-    
- 
 
+  
 gridSizeButton.addEventListener("click", () => {
     container.innerHTML = "";
     let gridSize = getGridSize();
     createGrid(gridSize);
+});
+
+rainbowModeButton.addEventListener("click", () => {
+    isRainbowMode = !isRainbowMode;
+    rainbowModeButton.textContent = isRainbowMode
+        ? "Rainbow Mode: ON"
+        : "Rainbow Mode: OFF"; // Update button text
 });
 
