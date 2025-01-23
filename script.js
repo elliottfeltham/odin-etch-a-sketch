@@ -94,6 +94,11 @@ rainbowModeButton.addEventListener("click", () => {
     isRainbowMode = !isRainbowMode;
     rainbowModeButton.textContent = isRainbowMode
         ? "Rainbow Mode: ON"
-        : "Rainbow Mode: OFF"; // Update button text
+        : "Rainbow Mode: OFF"; 
+    
+        rainbowModeButton.style.background = isRainbowMode
+        ? "linear-gradient(red, orange, yellow, green, blue, indigo, violet)"
+        : "var(--background-dark)";
+    
 });
 
