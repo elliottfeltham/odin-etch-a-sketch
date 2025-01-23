@@ -2,8 +2,7 @@
 
 :root { 
     --primary-light: #edf2f4; 
-    --secondary-light: #f8f9fa; 
-    --accent-color: #b616d6;  
+    --secondary-light: #f8f9fa;   
     --background-light: #ffffff; 
     --background-dark: #0a1d2e; 
   }
@@ -56,9 +55,16 @@
     box-shadow: var(--primary-light) 0px 3px 8px;
   }
 
-  .gridBox {
-    height: 6.25%;
-    width: 6.25%;
+  /* SETTINGS */
+
+  button {
+    color: var(--secondary-light);
+    background-color: var(--background-dark);
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid var(--primary-light);
+    border-radius: 5px;
+    box-shadow: var(--primary-light) 0px 1.5px 2px;
   }
 
   /* MEDIA QUERIES */
@@ -66,5 +72,23 @@
   @media (min-width: 768px) {
     html {
       font-size: 18px; 
+    }
+  }  
+
+  @media (max-width: 500px) {
+    html {
+      font-size: 15px; 
+    }
+  }  
+
+  @media (max-width: 400px) {
+    html {
+      font-size: 10px; 
+    }
+  }  
+
+  @media (max-width: 275px) {
+    html {
+      font-size: 5px; 
     }
   }  
